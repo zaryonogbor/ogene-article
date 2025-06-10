@@ -19,12 +19,6 @@ const Header = () => {
           >
             Home
           </Link>
-          <Link 
-            to="/admin" 
-            className="text-foreground hover:text-primary transition-colors font-medium"
-          >
-            Write Article
-          </Link>
         </nav>
 
         <Link to="/admin">

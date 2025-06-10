@@ -1,4 +1,3 @@
-
 import { Article } from "@/types/Article";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,44 +18,44 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   };
 
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/40 overflow-hidden">
-      <div className="aspect-video w-full overflow-hidden">
-        <img 
-          src={article.image} 
-          alt={article.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-          <Link to={`/article/${article.id}`} className="line-clamp-2">
+    <Link to={`/article/${article.id}`} className="block h-full">
+      <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/40 overflow-hidden cursor-pointer">
+        <div className="aspect-video w-full overflow-hidden">
+          <img 
+            src={article.image} 
+            alt={article.title}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <CardHeader>
+          <CardTitle className="text-xl font-bold text-foreground hover:text-primary transition-colors line-clamp-2">
             {article.title}
-          </Link>
-        </CardTitle>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-1">
-            <User className="w-4 h-4" />
-            <span>{article.author}</span>
+          </CardTitle>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <User className="w-4 h-4" />
+              <span>{article.author}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" />
+              <span>{formatDate(article.date)}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" />
-            <span>{formatDate(article.date)}</span>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground mb-4 line-clamp-3">
+            {article.excerpt}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {article.tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
           </div>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground mb-4 line-clamp-3">
-          {article.excerpt}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {article.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 
