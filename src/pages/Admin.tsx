@@ -83,88 +83,8 @@ const Admin = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl font-bold">Write New Article</CardTitle>
+              <CardTitle className="text-2xl font-bold">It seems this page is still under maintenance please be patient with us as the feature will soon be made available, thank you.</CardTitle>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="title">Title *</Label>
-                  <Input
-                    id="title"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleInputChange}
-                    placeholder="Enter article title"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="author">Author *</Label>
-                  <Input
-                    id="author"
-                    name="author"
-                    value={formData.author}
-                    onChange={handleInputChange}
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="image">Image URL</Label>
-                  <Input
-                    id="image"
-                    name="image"
-                    value={formData.image}
-                    onChange={handleInputChange}
-                    placeholder="Enter image URL (optional - will use default if empty)"
-                    type="url"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="excerpt">Excerpt</Label>
-                  <Textarea
-                    id="excerpt"
-                    name="excerpt"
-                    value={formData.excerpt}
-                    onChange={handleInputChange}
-                    placeholder="Brief description of your article (optional - will be auto-generated if left empty)"
-                    rows={3}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="content">Content *</Label>
-                  <Textarea
-                    id="content"
-                    name="content"
-                    value={formData.content}
-                    onChange={handleInputChange}
-                    placeholder="Write your article content here..."
-                    rows={12}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="tags">Tags</Label>
-                  <Input
-                    id="tags"
-                    name="tags"
-                    value={formData.tags}
-                    onChange={handleInputChange}
-                    placeholder="Enter tags separated by commas (e.g., technology, education, research)"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full">
-                  <Save className="w-4 h-4 mr-2" />
-                  Publish Article
-                </Button>
-              </form>
-            </CardContent>
           </Card>
         </div>
       </main>
